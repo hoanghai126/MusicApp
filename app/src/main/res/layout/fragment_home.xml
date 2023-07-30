@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HomeFragment"
+    android:background="@color/white"
+    android:id="@+id/layout_content"
+    android:visibility="gone"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/definite_dimen_40"
+        android:layout_marginTop="@dimen/definite_dimen_10"
+        android:layout_marginStart="@dimen/definite_dimen_10"
+        android:layout_marginEnd="@dimen/definite_dimen_10"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/edt_search_song"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_search_text"
+            android:inputType="text"
+            android:padding="@dimen/definite_dimen_10"
+            android:background="@drawable/bg_white_shape_border"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_xsmall"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/definite_dimen_35"
+            android:layout_toStartOf="@id/img_search"
+            android:background="@color/colorPrimaryDark"
+            android:layout_marginEnd="@dimen/definite_dimen_10"
+            />
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_red"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/definite_dimen_10"
+            />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/definite_dimen_20">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicator_3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/definite_dimen_30"
+                android:layout_gravity="center"
+                app:ci_drawable="@drawable/bg_indicatior_selected"
+                app:ci_drawable_unselected="@drawable/bg_indicatior_unselected" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/definite_dimen_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_popular_songs"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/layout_view_all_popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View all"
+                    android:textColor="@color/purple_700"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/purple_700"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_popular_songs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/definite_dimen_10"
+            android:layout_marginBottom="@dimen/definite_dimen_10"
+            android:nestedScrollingEnabled="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/definite_dimen_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_new_songs"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/layout_view_all_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View all"
+                    android:textColor="@color/purple_700"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/purple_700"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_new_songs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/definite_dimen_10"
+            android:layout_marginBottom="@dimen/definite_dimen_10"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
